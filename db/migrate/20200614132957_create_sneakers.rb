@@ -1,6 +1,7 @@
-class CreateNames < ActiveRecord::Migration[6.0]
+class CreateSneakers < ActiveRecord::Migration[6.0]
   def change
-    create_table :names do |t|
+    create_table :sneakers do |t|
+      t.string :name
       t.string :description
       t.string :image_url
       t.integer :category_id
