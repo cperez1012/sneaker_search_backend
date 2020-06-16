@@ -2,7 +2,9 @@ class Api::V1::SneakersController < ApplicationController
 
     def index
         sneakers = Sneaker.all
-        render json: sneakers
+        # render json: sneakers
+        
+        render json: SneakerSerializer.new(sneakers)
       end
     
       def create
