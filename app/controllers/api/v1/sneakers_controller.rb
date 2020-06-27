@@ -9,6 +9,7 @@ class Api::V1::SneakersController < ApplicationController
     
       def create
         sneaker = Sneaker.new(sneaker_params)
+
         if sneaker.save
           render json: sneaker, status: :accepted
         else
