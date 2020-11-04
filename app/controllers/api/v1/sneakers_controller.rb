@@ -1,3 +1,4 @@
+require 'pry'
 class Api::V1::SneakersController < ApplicationController
 
     def index
@@ -9,24 +10,25 @@ class Api::V1::SneakersController < ApplicationController
     
     def create
       sneaker = Sneaker.new(sneaker_params)
-
+      # binding.pry
       if sneaker.save
         render json: SneakerSerializer.new(sneaker)
         # render json: sneaker, status: :accepted
       else
+        # binding.pry
         render json: {errors: sneaker.errors.full_messages}, status: :unprocessible_entity
       end
     end
 
-    # def show
-    #   sneaker = Sneaker.new(sneaker_params)
+    def show
+      sneaker = Sneaker.new(sneaker_params)
 
-    #   if sneaker
-    #     render json: SneakerSerializer.new(sneaker)
-    #   else
-    #     render json: {errors: sneaker.errors.full_messages}, status: :unprocessible_entity
-    #   end
-    # end
+      if sneaker
+        render json: SneakerSerializer.new(sneaker)
+      else
+        render json: {errors: sneaker.errors.full_messages}, status: :unprocessible_entity
+      end
+    end
 
     def update
       sneaker = Sneaker.find(params[:id])
