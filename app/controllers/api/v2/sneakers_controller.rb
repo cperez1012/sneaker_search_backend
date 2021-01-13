@@ -55,3 +55,4 @@ class Api::V2::SneakersController < ApplicationController
     end
 
 end
+
