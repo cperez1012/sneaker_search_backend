@@ -10,13 +10,14 @@ class Api::V1::SneakersController < ApplicationController
     
     def create
       sneaker = Sneaker.new(sneaker_params)
-      # binding.pry
+
       if sneaker.save
+        # binding.pry
         render json: SneakerSerializer.new(sneaker)
         # render json: sneaker, status: :accepted
       else
         # binding.pry
-        render json: {errors: sneaker.errors.full_messages}, status: :unprocessible_entity
+        render json: {errors: sneaker.errors.full_messages}
       end
     end
 
