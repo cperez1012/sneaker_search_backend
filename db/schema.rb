@@ -25,6 +25,8 @@ ActiveRecord::Schema.define(version: 2020_11_03_172902) do
     t.string "name"
     t.string "description"
     t.string "image_url"
+    t.integer "quantity"
+    t.integer "shoe_size"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id", null: false
