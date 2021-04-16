@@ -37,7 +37,7 @@ class Api::V1::SneakersController < ApplicationController
       # byebug
         render json: SneakerSerializer.new(sneaker)
       else
-        render json: {errors: sneaker.errors.full_messages}, status: :unprocessible_entity
+        render json: {errors: sneaker.errors.full_messages}
       end
       # Sneaker.all.push(sneaker)
       # render json: sneaker, status: accepted
@@ -52,7 +52,7 @@ class Api::V1::SneakersController < ApplicationController
     private
     
     def sneaker_params
-      params.require(:sneaker).permit(:name, :description, :image_url, :category_id)
+      params.require(:sneaker).permit(:name, :description, :image_url, :quantity, :shoe_size, :category_id)
     end
 
 end
