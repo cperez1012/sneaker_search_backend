@@ -110,7 +110,7 @@ function getSneakers() {
   .then(response => response.json())
   .then(sneakers => {
     sneakers.data.forEach(sneaker => {
-        // debugger
+        //  
         // double check how your data is nested in the console so you can successfully access the attributes of each individual object
         // const sneakerMarkup = `
         //   <div data-id=${sneaker.id}>
@@ -123,10 +123,10 @@ function getSneakers() {
 
         //   document.querySelector('#sneaker-container').innerHTML += sneakerMarkup
         let newSneaker = new Sneaker(sneaker, sneaker.attributes)
-        // debugger
+        //  
         document.querySelector('#sneaker-container').innerHTML += newSneaker.renderSneakerCard();
         // render(sneaker)
-        // debugger
+        //  
       })
       // .catch(err => console.log(err))
     })
@@ -184,9 +184,9 @@ function postSneaker(name, description, image_url, category_id) {
     // document.querySelector('#sneaker-container').innerHTML += sneakerMarkup;
     // render(sneakerData)
     // Using the newSneaker defined variable in my post request and changing it to sneakerData
-    // debugger
+    //  
     let newSneaker = new Sneaker(sneakerData, sneakerData.attributes)
-    // debugger
+    //  
        
     document.querySelector('#sneaker-container').innerHTML += newSneaker.renderSneakerCard();  
   })
@@ -234,20 +234,20 @@ class Sneaker {
     // We give two arguments, one for the sneaker data and the other for the sneaker attributes (we can call it whatever we want so we chose sneakerAttributes)
     constructor(sneaker, sneakerAttributes) {
         this.id = sneaker.id
-        // debugger
+        //  
         this.name = sneakerAttributes.name
         this.description = sneakerAttributes.description
         this.image_url = sneakerAttributes.image_url
         this.category = sneakerAttributes.category
-        debugger
+         
         Sneaker.all.push(this)
         console.log(this)
-        // debugger
+        //  
         // Push all instances of this to the array
     }
     // The constructor allowed us to use this to pass in the sneaker attributes defined above
     renderSneakerCard() {
-        // debugger
+        //  
         // console.log(this)
         // return `
         //   <div data-id=${this.id}>
