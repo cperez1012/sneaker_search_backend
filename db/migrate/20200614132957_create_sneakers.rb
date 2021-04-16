@@ -5,6 +5,8 @@ class CreateSneakers < ActiveRecord::Migration[6.0]
       t.string :description
       t.string :image_url
       t.integer :category_id
+      t.integer :quantity
+      t.integer :shoe_size
 
       t.timestamps
     end
