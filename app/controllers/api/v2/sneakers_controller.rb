@@ -51,7 +51,7 @@ class Api::V2::SneakersController < ApplicationController
     private
     
     def sneaker_params
-      params.require(:sneaker).permit(:name, :description, :image_url, :category_id)
+      params.require(:sneaker).permit(:name, :description, :image_url, :quantity, :shoe_size, :category_id)
     end
 
 end
