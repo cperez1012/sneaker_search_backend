@@ -34,11 +34,18 @@ module SneakerSearchBackend
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # config.middleware.use Rack::MethodOverride
+    # config.middleware.use ActionDispatch::Flash
+    # config.middleware.use ActionDispatch::Cookies
+    # config.middleware.use ActionDispatch::Session::CookieStore
+
     excluded_routes = ->(env) { !env["PATH_INFO"].match(%r{^/api}) }
     config.middleware.use OliveBranch::Middleware,
                       inflection:       "camel",
                       exclude_params:   excluded_routes,
                       exclude_response: excluded_routes
+
 
   end
 end

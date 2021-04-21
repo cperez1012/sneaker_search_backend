@@ -3,7 +3,6 @@ class Api::V1::SneakersController < ApplicationController
 
     def index
       sneakers = Sneaker.all
-      # render json: sneakers
         
       render json: SneakerSerializer.new(sneakers)
     end
@@ -12,11 +11,10 @@ class Api::V1::SneakersController < ApplicationController
       sneaker = Sneaker.new(sneaker_params)
 
       if sneaker.save
-        # binding.pry
-        render json: SneakerSerializer.new(sneaker)
-        # render json: sneaker, status: :accepted
+        binding.pry
+        render json: SneakerSerializer.new(sneaker), status: :accepted
       else
-        # binding.pry
+        binding.pry
         render json: {errors: sneaker.errors.full_messages}
       end
     end
@@ -33,14 +31,13 @@ class Api::V1::SneakersController < ApplicationController
 
     def update
       sneaker = Sneaker.find(params[:id])
+      # binding.pry
       if sneaker.update(sneaker_params)
-      # byebug
-        render json: SneakerSerializer.new(sneaker)
+        # binding.pry
+        render json: SneakerSerializer.new(sneaker), status: accepted
       else
         render json: {errors: sneaker.errors.full_messages}
       end
-      # Sneaker.all.push(sneaker)
-      # render json: sneaker, status: accepted
     end
 
     def destroy

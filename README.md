@@ -1,5 +1,7 @@
 # Sneaker Search README
 
+![](SneakerSearch.gif)
+
 Sneaker Search is a sneaker catalog application , where the user can create a sneaker object that allows the user to submit a form and include the sneaker name, description of the sneaker, sneaker image, and sneaker category name ranging from Basketball, Running, and Lifestyle sneakers.
 
 Sneaker Search utilizes Rails for the backend and JavaScript for the frontend.

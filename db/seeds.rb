@@ -21,3 +21,4 @@ lifestyle.id = Category.second.id
 running.id = Category.last.id
 
 Sneaker.create(name: "Air Jordan 1 Retro High OG 'Pine Green 2.0'", description:"Released in early 2020, the Air Jordan 1 Retro High OG 'Pine Green 2.0' comes in a simple colorway of Pine Green and Gym Red on a black template. When Peter Moore designed the first Air Jordan in 1985, he wanted to provide support for the dynamic superstar with the freakishly athletic game—without sacrificing comfort. He designed a high-top shoe with durable leather featuring upper eyelet straps, heel and midfoot overlays, and a perforated toebox. The history of flight had begun.", image_url: "https://image.goat.com/crop/500/attachments/product_template_additional_pictures/images/032/436/952/original/496584_08.jpg.jpeg?1581012121", quantity: 1, shoe_size: 9, category_id: basketball.id)
+# AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
