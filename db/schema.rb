@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_06_15_203829) do
     t.string "description"
     t.string "image_url"
     t.integer "quantity"
-    t.integer "shoe_size"
+    t.decimal "shoe_size", precision: 15, scale: 1
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id", null: false
