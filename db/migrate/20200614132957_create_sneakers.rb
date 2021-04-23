@@ -6,7 +6,7 @@ class CreateSneakers < ActiveRecord::Migration[6.0]
       t.string :image_url
       t.integer :category_id
       t.integer :quantity
-      t.integer :shoe_size
+      t.decimal :shoe_size, precision:15, scale:1
 
       t.timestamps
     end
