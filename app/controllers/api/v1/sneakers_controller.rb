@@ -11,10 +11,10 @@ class Api::V1::SneakersController < ApplicationController
       sneaker = Sneaker.new(sneaker_params)
 
       if sneaker.save
-        binding.pry
-        render json: SneakerSerializer.new(sneaker), status: :accepted
+        # binding.pry
+        render json: SneakerSerializer.new(sneaker), status: :created
       else
-        binding.pry
+        # binding.pry
         render json: {errors: sneaker.errors.full_messages}
       end
     end
@@ -34,7 +34,7 @@ class Api::V1::SneakersController < ApplicationController
       # binding.pry
       if sneaker.update(sneaker_params)
         # binding.pry
-        render json: SneakerSerializer.new(sneaker), status: accepted
+        render json: SneakerSerializer.new(sneaker), status: :accepted
       else
         render json: {errors: sneaker.errors.full_messages}
       end
@@ -43,7 +43,7 @@ class Api::V1::SneakersController < ApplicationController
     def destroy
       sneaker = Sneaker.find(params[:id])
       sneaker.delete
-      render json: SneakerSerializer.new(sneaker)
+      render json: SneakerSerializer.new(sneaker), status: :ok
     end
     
     private
